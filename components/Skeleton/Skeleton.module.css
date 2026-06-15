@@ -1,0 +1,43 @@
+@keyframes shimmer {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.card {
+  @apply bg-lighter rounded-xl p-6 border border-light;
+}
+
+.header {
+  @apply flex items-center gap-4 mb-6;
+}
+
+.avatar {
+  @apply rounded-full shrink-0;
+  width: 72px;
+  height: 72px;
+  background-color: #1D2B40;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+.headerLines {
+  @apply flex flex-col gap-3 flex-1;
+}
+
+.body {
+  @apply flex flex-col gap-3;
+}
+
+.line {
+  @apply rounded-md;
+  height: 12px;
+  background-color: #1D2B40;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+.lineShort {
+  width: 55%;
+}
+
+.lineSubheading {
+  width: 72%;
+}
