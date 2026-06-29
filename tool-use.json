@@ -1,0 +1,45 @@
+{
+  "session_id": "2f53d57f-cb7e-4707-83c4-e17fa103b704",
+  "transcript_path": "/home/can/.claude/projects/-home-can-Desktop-Dev-AI-Claude-Code-Masterclass/2f53d57f-cb7e-4707-83c4-e17fa103b704.jsonl",
+  "cwd": "/home/can/Desktop/Dev/AI/Claude-Code-Masterclass",
+  "permission_mode": "default",
+  "effort": {
+    "level": "high"
+  },
+  "hook_event_name": "PostToolUse",
+  "tool_name": "Edit",
+  "tool_input": {
+    "file_path": "/home/can/Desktop/Dev/AI/Claude-Code-Masterclass/app/(public)/page.tsx",
+    "old_string": "<div>It's not workplace sabotage. It's team building.</div>",
+    "new_string": "<div>Chaos, but make it corporate.</div>",
+    "replace_all": false
+  },
+  "tool_response": {
+    "filePath": "/home/can/Desktop/Dev/AI/Claude-Code-Masterclass/app/(public)/page.tsx",
+    "oldString": "<div>It's not workplace sabotage. It's team building.</div>",
+    "newString": "<div>Chaos, but make it corporate.</div>",
+    "originalFile": "// this page should be used only as a splash page to decide where a user should be navigated to\n// when logged in --> to /heists\n// when not logged in --> to /login\n\nimport { Clock8 } from \"lucide-react\"\n\nexport default function Home() {\n  return (\n    <div className=\"center-content\">\n    <div className=\"page-content\">\n        <h1>\n          P<Clock8 className=\"logo\" strokeWidth={2.75} />cket Heist\n        </h1>\n        <div>It's not workplace sabotage. It's team building.</div>\n        <p>\n          Welcome to Pocket Heist — the app where you assign sneaky little\n          missions to your coworkers and watch the chaos unfold. Steal someone's\n          stapler, rearrange the break room, or challenge a colleague to go an\n          entire day without saying \"synergy.\" The stakes are low. The glory is\n          real.\n        </p>\n        <p>\n          Every heist comes with a deadline, a difficulty rating, and the sweet\n          satisfaction of watching your target realise what just happened.\n          Complete missions to climb the leaderboard, earn badges, and cement\n          your legacy as the most diabolical desk jockey in the office.\n        </p>\n        <p>\n          Ready to cause some (harmless) chaos? Log in to see your active\n          heists, or sign up to start your first mission today.\n        </p>\n      </div>\n    </div>\n  )\n}\n",
+    "structuredPatch": [
+      {
+        "oldStart": 11,
+        "oldLines": 7,
+        "newStart": 11,
+        "newLines": 7,
+        "lines": [
+          "         <h1>",
+          "           P<Clock8 className=\"logo\" strokeWidth={2.75} />cket Heist",
+          "         </h1>",
+          "-        <div>It's not workplace sabotage. It's team building.</div>",
+          "+        <div>Chaos, but make it corporate.</div>",
+          "         <p>",
+          "           Welcome to Pocket Heist — the app where you assign sneaky little",
+          "           missions to your coworkers and watch the chaos unfold. Steal someone's"
+        ]
+      }
+    ],
+    "userModified": false,
+    "replaceAll": false
+  },
+  "tool_use_id": "toolu_01PTzk5KocjxzPha8Jb1QRqw",
+  "duration_ms": 153
+}
