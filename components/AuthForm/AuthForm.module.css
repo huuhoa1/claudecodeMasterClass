@@ -1,0 +1,33 @@
+@reference "../../app/globals.css";
+
+.form {
+  @apply flex flex-col gap-4 mx-auto w-full max-w-sm;
+}
+
+.field {
+  @apply flex flex-col gap-1;
+}
+
+.field span {
+  @apply text-sm font-semibold;
+}
+
+.field input {
+  @apply bg-lighter border border-light rounded-lg px-3 py-2 w-full;
+}
+
+.passwordWrapper {
+  @apply relative;
+}
+
+.toggleBtn {
+  @apply absolute top-1/2 right-3 -translate-y-1/2 text-body cursor-pointer;
+}
+
+.switch {
+  @apply text-sm text-center;
+}
+
+.switch a {
+  @apply text-primary font-semibold hover:text-secondary;
+}

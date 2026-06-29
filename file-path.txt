@@ -1,1 +1,1 @@
-"/home/can/.claude/plans/plan-the-feature-described-sunny-duckling.md"
+"/home/can/Desktop/Dev/AI/Claude-Code-Masterclass/app/(public)/signup/page.tsx"
