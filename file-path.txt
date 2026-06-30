@@ -1,1 +1,1 @@
-"/home/can/Desktop/Dev/AI/Claude-Code-Masterclass/tests/lib/generateCodename.test.ts"
+"/home/can/Desktop/Dev/AI/Claude-Code-Masterclass/components/Navbar/Navbar.module.css"
