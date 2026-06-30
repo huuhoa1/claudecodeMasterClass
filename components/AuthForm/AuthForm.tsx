@@ -7,6 +7,11 @@ import styles from "./AuthForm.module.css";
 
 type AuthMode = "login" | "signup";
 
+interface AuthFormProps {
+  mode: AuthMode;
+  onSubmit?: (email: string, password: string) => Promise<void>;
+}
+
 const copy = {
   login: {
     submit: "Login",
@@ -22,18 +27,34 @@ const copy = {
   },
 };
 
-export default function AuthForm({ mode }: { mode: AuthMode }) {
+export default function AuthForm({ mode, onSubmit }: AuthFormProps) {
   const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const { submit, prompt, linkLabel, linkHref } = copy[mode];
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
-    const email = formData.get("email");
-    const password = formData.get("password");
+    const email = formData.get("email") as string;
+    const password = formData.get("password") as string;
 
-    console.log({ email, password });
+    if (!onSubmit) {
+      console.log({ email, password });
+      return;
+    }
+
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      await onSubmit(email, password);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong.");
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -64,9 +85,11 @@ export default function AuthForm({ mode }: { mode: AuthMode }) {
         </div>
       </label>
 
-      <button type="submit" className="btn">
-        {submit}
+      <button type="submit" className="btn" disabled={isLoading}>
+        {isLoading ? "Please wait…" : submit}
       </button>
+
+      {error && <p className={styles.error}>{error}</p>}
 
       <p className={styles.switch}>
         {prompt} <Link href={linkHref}>{linkLabel}</Link>

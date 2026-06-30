@@ -83,4 +83,51 @@ describe("AuthForm", () => {
       password: "secret123",
     });
   });
+
+  it("calls the onSubmit prop with email and password when provided", async () => {
+    const user = userEvent.setup();
+    const mockSubmit = vi.fn().mockResolvedValue(undefined);
+    render(<AuthForm mode="signup" onSubmit={mockSubmit} />);
+
+    await user.type(screen.getByLabelText(/email/i), "thief@heist.io");
+    await user.type(screen.getByLabelText("Password"), "secret123");
+    await user.click(screen.getByRole("button", { name: /sign up/i }));
+
+    expect(mockSubmit).toHaveBeenCalledWith("thief@heist.io", "secret123");
+  });
+
+  it("disables the submit button while onSubmit is pending", async () => {
+    const user = userEvent.setup();
+    let resolve!: () => void;
+    const mockSubmit = vi.fn(
+      () =>
+        new Promise<void>((r) => {
+          resolve = r;
+        }),
+    );
+    render(<AuthForm mode="signup" onSubmit={mockSubmit} />);
+
+    await user.type(screen.getByLabelText(/email/i), "thief@heist.io");
+    await user.type(screen.getByLabelText("Password"), "secret123");
+    await user.click(screen.getByRole("button", { name: /sign up/i }));
+
+    expect(screen.getByRole("button", { name: /please wait/i })).toBeDisabled();
+    resolve();
+  });
+
+  it("displays an error message when onSubmit rejects", async () => {
+    const user = userEvent.setup();
+    const mockSubmit = vi
+      .fn()
+      .mockRejectedValue(new Error("Email already in use."));
+    render(<AuthForm mode="signup" onSubmit={mockSubmit} />);
+
+    await user.type(screen.getByLabelText(/email/i), "taken@heist.io");
+    await user.type(screen.getByLabelText("Password"), "secret123");
+    await user.click(screen.getByRole("button", { name: /sign up/i }));
+
+    expect(
+      await screen.findByText("Email already in use."),
+    ).toBeInTheDocument();
+  });
 });

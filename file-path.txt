@@ -1,1 +1,1 @@
-"/home/can/Desktop/Dev/AI/Claude-Code-Masterclass/contexts/AuthContext.tsx"
+"/home/can/Desktop/Dev/AI/Claude-Code-Masterclass/tests/lib/generateCodename.test.ts"

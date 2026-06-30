@@ -31,3 +31,7 @@
 .switch a {
   @apply text-primary font-semibold hover:text-secondary;
 }
+
+.error {
+  @apply text-sm text-error text-center;
+}
