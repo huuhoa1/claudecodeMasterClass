@@ -2,47 +2,25 @@
   "session_id": "fd7af397-89c7-4507-bbc3-10001d3a3e94",
   "transcript_path": "/home/can/.claude/projects/-home-can-Desktop-Dev-AI-Claude-Code-Masterclass/fd7af397-89c7-4507-bbc3-10001d3a3e94.jsonl",
   "cwd": "/home/can/Desktop/Dev/AI/Claude-Code-Masterclass",
-  "permission_mode": "plan",
+  "prompt_id": "43f540b4-723d-4af7-9ead-d96314017cd7",
+  "permission_mode": "default",
   "effort": {
     "level": "high"
   },
   "hook_event_name": "PostToolUse",
-  "tool_name": "Edit",
+  "tool_name": "Write",
   "tool_input": {
-    "file_path": "/home/can/Desktop/Dev/AI/Claude-Code-Masterclass/app/(public)/signup/page.tsx",
-    "old_string": "export default function SignupPage() {\n  return (\n    <div className=\"center-content\">\n      <div className=\"page-content\">\n        <h2 className=\"form-title\">Signup for an Account</h2>\n      </div>\n    </div>\n  )\n}",
-    "new_string": "import AuthForm from \"@/components/AuthForm\"\n\nexport default function SignupPage() {\n  return (\n    <div className=\"center-content\">\n      <div className=\"page-content\">\n        <h2 className=\"form-title\">Signup for an Account</h2>\n        <AuthForm mode=\"signup\" />\n      </div>\n    </div>\n  )\n}",
-    "replace_all": false
+    "file_path": "/home/can/Desktop/Dev/AI/Claude-Code-Masterclass/firebase.json",
+    "content": "{\n  \"firestore\": {\n    \"rules\": \"firestore.rules\"\n  },\n  \"auth\": {\n    \"providers\": {\n      \"emailPassword\": true\n    }\n  }\n}\n"
   },
   "tool_response": {
-    "filePath": "/home/can/Desktop/Dev/AI/Claude-Code-Masterclass/app/(public)/signup/page.tsx",
-    "oldString": "export default function SignupPage() {\n  return (\n    <div className=\"center-content\">\n      <div className=\"page-content\">\n        <h2 className=\"form-title\">Signup for an Account</h2>\n      </div>\n    </div>\n  )\n}",
-    "newString": "import AuthForm from \"@/components/AuthForm\"\n\nexport default function SignupPage() {\n  return (\n    <div className=\"center-content\">\n      <div className=\"page-content\">\n        <h2 className=\"form-title\">Signup for an Account</h2>\n        <AuthForm mode=\"signup\" />\n      </div>\n    </div>\n  )\n}",
-    "originalFile": "export default function SignupPage() {\n  return (\n    <div className=\"center-content\">\n      <div className=\"page-content\">\n        <h2 className=\"form-title\">Signup for an Account</h2>\n      </div>\n    </div>\n  )\n}",
-    "structuredPatch": [
-      {
-        "oldStart": 1,
-        "oldLines": 8,
-        "newStart": 1,
-        "newLines": 11,
-        "lines": [
-          "+import AuthForm from \"@/components/AuthForm\"",
-          "+",
-          " export default function SignupPage() {",
-          "   return (",
-          "     <div className=\"center-content\">",
-          "       <div className=\"page-content\">",
-          "         <h2 className=\"form-title\">Signup for an Account</h2>",
-          "+        <AuthForm mode=\"signup\" />",
-          "       </div>",
-          "     </div>",
-          "   )"
-        ]
-      }
-    ],
-    "userModified": false,
-    "replaceAll": false
+    "type": "create",
+    "filePath": "/home/can/Desktop/Dev/AI/Claude-Code-Masterclass/firebase.json",
+    "content": "{\n  \"firestore\": {\n    \"rules\": \"firestore.rules\"\n  },\n  \"auth\": {\n    \"providers\": {\n      \"emailPassword\": true\n    }\n  }\n}\n",
+    "structuredPatch": [],
+    "originalFile": null,
+    "userModified": false
   },
-  "tool_use_id": "toolu_011nY2WFnHzLve5u7tYFuxu9",
-  "duration_ms": 117
+  "tool_use_id": "toolu_01QNNvW4NygyyDihNTasqVoj",
+  "duration_ms": 109
 }
