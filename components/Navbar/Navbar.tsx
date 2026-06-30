@@ -1,8 +1,13 @@
-import { Clock8 } from "lucide-react"
-import Link from "next/link"
-import styles from "./Navbar.module.css"
+"use client";
+
+import { Clock8 } from "lucide-react";
+import Link from "next/link";
+import styles from "./Navbar.module.css";
+import { useUser } from "@/hooks/useUser";
+import Avatar from "@/components/Avatar";
 
 export default function Navbar() {
+  const { user, displayName, email } = useUser();
   return (
     <div className={styles.siteNav}>
       <nav>
@@ -17,10 +22,17 @@ export default function Navbar() {
         </header>
         <ul>
           <li>
-            <Link href="/heists/create" className="btn">Create Heist</Link>
+            <Link href="/heists/create" className="btn">
+              Create Heist
+            </Link>
           </li>
+          {user && (
+            <li>
+              <Avatar name={displayName ?? email ?? ""} />
+            </li>
+          )}
         </ul>
       </nav>
     </div>
-  )
+  );
 }
