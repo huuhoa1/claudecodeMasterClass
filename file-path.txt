@@ -1,1 +1,1 @@
-"/home/can/Desktop/Dev/AI/Claude-Code-Masterclass/components/Navbar/Navbar.module.css"
+"/home/can/Desktop/Dev/AI/Claude-Code-Masterclass/tests/app/login.test.tsx"
